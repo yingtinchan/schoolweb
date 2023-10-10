@@ -14,7 +14,7 @@
 //   example:
 //   font-size: sp(32);
 // ----
-$sp-design-width640: 640; // SPデザインの幅を設定
+$sp-design-width640: 640; 
 @function sp($num, $width: $sp-design-width640) {
     @return (1vw * $num / $width * 100);
 }
@@ -22,7 +22,7 @@ $sp-design-width640: 640; // SPデザインの幅を設定
 //   example:
 //   font-size: spvw(32);
 // ----
-$sp-design-width: 320; // SPデザインの幅を設定
+$sp-design-width: 320; 
 @function spvw($num, $width: $sp-design-width) {
     @return (1vw * $num / $width * 100);
 }
@@ -30,7 +30,7 @@ $sp-design-width: 320; // SPデザインの幅を設定
 //   example:
 //   @include media-sp {}
 // ----
-$break-point: 767px; // ブレイクポイント
+$break-point: 767px; 
 @mixin media-sp {
     @media screen and (max-width: $break-point) {
         @content;
@@ -39,8 +39,6 @@ $break-point: 767px; // ブレイクポイント
 
 /* STYLES
  * ========================================================================== */
-
-
 
 .site-silder {
 	.top-mv {
@@ -75,7 +73,6 @@ $break-point: 767px; // ブレイクポイント
 	}
 }
 .list-pickup {
-	/*align-items: flex-start;*/
 	li {
 		.pickup-img {
 			position: relative;
@@ -119,8 +116,7 @@ $break-point: 767px; // ブレイクポイント
 	}
 }
 
-/* メニュー改修 20210612
- * ========================================================================== */
+/* ========================================================================== */
 
 .index-nav-body {
 	ul {
@@ -145,8 +141,7 @@ $break-point: 767px; // ブレイクポイント
 	}
 }
 
-/* トップページ改修 20210212
- * ========================================================================== */
+/* ========================================================================== */
 
 
 .site-main {
@@ -425,8 +420,7 @@ $break-point: 767px; // ブレイクポイント
 }
 
 
-/* 学校紹介動画ページ追加 20210212
- * ========================================================================== */
+/*========================================================================== */
 
 .movie-list {
 	width: 100%;
@@ -479,8 +473,7 @@ $break-point: 767px; // ブレイクポイント
 	}
 }
 
-/* 校長ブログ作成 20210610
- * ========================================================================== */
+/* ========================================================================== */
 
 .diary-list {
 	width: 100%;
@@ -527,21 +520,6 @@ $break-point: 767px; // ブレイクポイント
 				}
 			}
 			.cate {
-				/*border: solid 2px #A3D700;
-				height: 28px;
-				text-align: center;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
-				padding: 0 1em;
-				font-weight: bold;
-				font-size: pc(14);
-				border-radius: 14px;
-				margin: 0 20px 0 0;
-				font-weight: 500;
-				border: solid 2px #000;
-				color: #000;*/
 				box-sizing: border-box;
 				padding: 2px 0.777em;
 				text-align: center;
@@ -555,13 +533,7 @@ $break-point: 767px; // ブレイクポイント
 				vertical-align: middle;
 				position: relative;
 				margin: 0 20px 0 0;
-				/*top: -2px;*/
 				@include media-sp {
-					/*border: solid sp(1) #A3D700;
-					height: sp(32);
-					font-size: sp(20);
-					border-radius: sp(16);
-					margin: 0;*/
 						line-height: 1;
 						padding: 3px 0.777em;
 						border-width: 1px;
@@ -612,56 +584,9 @@ $break-point: 767px; // ブレイクポイント
 		margin: 15px auto 20px auto;
 	}
 	li {
-		/*width: 210px;
-		height: 60px;
-		@include media-sp {
-			width: sp(230);
-			height: sp(100);
-		}*/
 		@include media-sp {
 			width: 45%;
 		}
-		/*a {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			align-items: center;
-			color: #fff;
-			text-decoration: none;
-			text-align: center;
-			font-size: pc(16);
-			font-weight: 700;
-			background-color: #9CC715;
-			border-radius: 30px;
-			position: relative;
-			@include media-sp {
-				font-size: sp(32);
-				border-radius: sp(50);
-			}
-			opacity: 1;
-			transition: opacity 300ms 0s ease;
-			&:hover {
-				opacity: .6;
-				transition: opacity 300ms 0s ease;
-			}
-			i {
-				position: absolute;
-				font-size: pc(20);
-				top: 50%;
-				margin-top: pc(-10);
-				@include media-sp {
-					font-size: sp(40);
-					margin-top: sp(-20);
-				}
-			}
-			&.disabled {
-				cursor: default;
-				opacity: 0.2;
-				pointer-events: none;
-			}
-		}*/
 		a {
 			padding: 16px 25px;
 			text-decoration: none;
@@ -763,22 +688,6 @@ $break-point: 767px; // ブレイクポイント
 				}
 			}
 			.cate {
-				/*border: solid 2px #A3D700;
-				height: 28px;
-				text-align: center;
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: center;
-				align-items: center;
-				padding: 0 1em;
-				font-weight: bold;
-				font-size: pc(14);
-				border-radius: 14px;
-				margin: 0 20px 0 0;
-				font-weight: 700;
-				border: solid 2px #000;
-				color: #000;*/
-				/*width: 73px;*/
 				padding: 4px 1em;
 				text-align: center;
 				line-height: 1;
@@ -790,11 +699,6 @@ $break-point: 767px; // ブレイクポイント
 				display: block;
 				margin: 0;
 				@include media-sp {
-					/*border: solid sp(3) #A3D700;
-					height: sp(50);
-					font-size: sp(26);
-					border-radius: sp(25);
-					margin: 0;*/
 					width: auto;
 					line-height: 1;
 					padding: 3px 1em;
