@@ -60,42 +60,38 @@ let data = [
     }
 ]
 
-navbar()
-menubar()
-footer()
-
-function navbar(){
-        let nav='<ul id="js-index-nav">'
-        for(let i=0; i<data.length;i++){
-            nav+=`<li><span class="toggle-btn">${data[i].title}</span>
-            <div class="toggle-cont">
-              <div class="wrap">
-                <div class="index-nav-img">
-                <img src="${data[i].img}">
-                </div>
-                <div class="index-nav-txt">
-                  <div class="index-nav-title">${data[i].title}</div>
-                  <div class="index-nav-body">
-                `
-            for(let k=0;k<data[i].contect.length;k++){
-                if(k%4==0){
-                    nav+=`<ul><li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li>`
-                }else if(k%4==3){
-                    nav+=`<li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li></ul>`
-                }else{
-                    nav+=`<li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li>`
-                }
+$("#nav-bar").html(function (){
+    let nav='<ul id="js-index-nav">'
+    for(let i=0; i<data.length;i++){
+        nav+=`<li><span class="toggle-btn">${data[i].title}</span>
+        <div class="toggle-cont">
+          <div class="wrap">
+            <div class="index-nav-img">
+            <img src="${data[i].img}">
+            </div>
+            <div class="index-nav-txt">
+              <div class="index-nav-title">${data[i].title}</div>
+              <div class="index-nav-body">
+            `
+        for(let k=0;k<data[i].contect.length;k++){
+            if(k%4==0){
+                nav+=`<ul><li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li>`
+            }else if(k%4==3){
+                nav+=`<li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li></ul>`
+            }else{
+                nav+=`<li><a href="${data[i].contect[k][1]}">${data[i].contect[k][0]}</a></li>`
             }
-            if(data[i].contect.length%4!=0){
-                nav+=`</ul>`
-            }
-            nav+='</div></div></div></div></li>'
         }
-        nav+='</ul>'
-    document.querySelector("#nav-bar").innerHTML = nav
-}
+        if(data[i].contect.length%4!=0){
+            nav+=`</ul>`
+        }
+        nav+='</div></div></div></div></li>'
+    }
+    nav+='</ul>'
+    return nav
+})
 
-function footer(){
+$("#footer-nav").html(function (){
     let nav = ''
     for(let i=0; i<data.length;i++){
         nav+=`<div class="grid-item">
@@ -109,10 +105,10 @@ function footer(){
         </div>
       </div>`
     }
-    document.querySelector("#footer-nav").innerHTML = nav
-}
+    return nav
+})
 
-function menubar() {
+$("#menu-nav").html(function (){
     let nav = '<ul class="menu-cont-wrap pc-hide">'
     for(let i=0; i<data.length;i++){
         nav+=`
@@ -125,5 +121,5 @@ function menubar() {
         </li>`
     }
     nav+='</ul>'
-    document.querySelector("#menu-nav").innerHTML = nav
-}
+    return nav
+})
