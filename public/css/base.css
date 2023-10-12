@@ -2736,6 +2736,13 @@ strong {
     margin-bottom: 30px
 }
 
+.j-12b_wrap > h2{
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-family: 'Noto Serif';
+}
+
 .bx-gyonen {
     margin-top: 0;
     color: #fff;
