@@ -10,7 +10,7 @@ $(function () {
 
 	$('.sp-zoom').each(function () {
 		var url = $(this).attr('src');
-		$(this).after('<div class="btn-zoom pc-hide"><a href="' + url + '" target="_blank"><i class="fas fa-search-plus"></i> 画像を拡大</a></div>');
+		$(this).after('<div class="btn-zoom pc-hide"><a href="' + url + '" target="_blank"><i class="fas fa-search-plus"></i> zoom in</a></div>');
 	});
 
 	if ($('.site-main.l-narrow').length) {

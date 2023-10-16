@@ -8,7 +8,7 @@ let data = [
             ["Vision & Mission","vision.html"],
             ["Administrative Unit","administrative.html"],
             ["Faculty Unit","faculty.html"],
-            ["Campus","#"],
+            ["Campus","map.html"],
             ["Contact Us","#"],
             ["Resources and Facilities","#"],
             ["Staff Email Service","#"]
@@ -29,9 +29,9 @@ let data = [
         "title":"Programms",
         "img":"/public/img/index/thumb-schoollife.jpeg",
         "contect": [
-            ["Bachelor  Degree","#"],
-            ["Top-Up Degree","#"],
-            ["Higher Diploma","#"],
+            ["Bachelor  Degree","degree.html"],
+            ["Top-Up Degree","degree.html"],
+            ["Higher Diploma","highdip.html"],
             ["Diploma in College Foundation Studies (DCFS)","#"],
             ["Diploma of Applied Education (DAE)","#"],
             ["Diploma Yi Jin (DYJ)","#"],
@@ -54,8 +54,8 @@ let data = [
         "title":"About",
         "img":"/public/img/index/thumb-guidance.jpeg",
         "contect": [
-            ["Contact Us","#"],
-            ["Map","#"]
+            ["Contact Us","contact.html"],
+            ["Map","map.html"]
         ]
     }
 ]
