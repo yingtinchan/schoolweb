@@ -7,7 +7,7 @@ let data = [
             ["Institute History","history.html"],
             ["Vision & Mission","vision.html"],
             ["Administrative Unit","administrative.html"],
-            ["Faculty Unit","#"],
+            ["Faculty Unit","faculty.html"],
             ["Campus","#"],
             ["Contact Us","#"],
             ["Resources and Facilities","#"],
