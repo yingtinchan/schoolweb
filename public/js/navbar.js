@@ -9,7 +9,7 @@ let data = [
             ["Administrative Unit","administrative.html"],
             ["Faculty Unit","faculty.html"],
             ["Campus","map.html"],
-            ["Contact Us","#"],
+            ["Contact Us","contact.html"],
             ["Resources and Facilities","#"],
             ["Staff Email Service","#"]
         ]

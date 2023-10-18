@@ -4012,3 +4012,27 @@ strong {
     font-size:small;
     color:#000;
 }
+
+.contactus {
+    list-style-type: none;
+}
+
+.news-table{
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #1a1a1a;
+}
+
+.news-table > td, th {
+    text-align: left;
+    padding: 8px;
+  }
+
+.news-table > tr > td{
+    border: 1px solid #1a1a1a;
+    padding: 8px;
+}
+
+.news-table > tr:nth-child(even) {
+    background-color: #dddddd;
+  }
