@@ -4017,22 +4017,35 @@ strong {
     list-style-type: none;
 }
 
-.news-table{
+.news-table, .events-table{
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #1a1a1a;
 }
 
-.news-table > td, th {
+.news-table > td, th,  .events-table> td, th {
     text-align: left;
     padding: 8px;
   }
 
-.news-table > tr > td{
+.news-table > tr > td, .events-table > tr > td{
     border: 1px solid #1a1a1a;
     padding: 8px;
 }
 
-.news-table > tr:nth-child(even) {
+.news-table > tr:nth-child(even), .events-table > tr:nth-child(even) {
     background-color: #dddddd;
+  }
+
+.facu{
+    display: flex;
+  }
+
+.text-center > i {
+    display: flex;
+    justify-content: center; 
+  }
+
+.facu > a{
+    text-decoration:none;
   }

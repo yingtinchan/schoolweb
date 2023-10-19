@@ -9,20 +9,16 @@ let data = [
             ["Administrative Unit","administrative.html"],
             ["Faculty Unit","faculty.html"],
             ["Campus","map.html"],
-            ["Contact Us","contact.html"],
-            ["Resources and Facilities","#"],
-            ["Staff Email Service","#"]
+            ["Contact Us","contact.html"]
         ]
     },
     {
         "title":"Admission",
         "img":"/public/img/index/thumb-educationtrait.jpeg",
         "contect": [
-            ["Prospective Student","#"],
-            ["Financial Assistance","#"],
-            ["Available Programmes","#"],
-            ["Online Application","#"],
-            ["Student Email Service","#"]
+            ["Prospective Student","prospective.html"],
+            ["Financial Assistance","financial.html"],
+            ["Online Application","onapp.html"]
         ]
     },
     {
@@ -41,13 +37,11 @@ let data = [
         ]
     },
     {
-        "title":"News",
+        "title":"News & Events",
         "img":"/public/img/index/thumb-entranceguide.jpeg",
         "contect": [
-            ["HKIT News","#"],
-            ["Student Notice","#"],
-            ["Previous News","#"],
-            ["All News","#"]
+            ["News","news.html"],
+            ["Events","events.html"]
         ]
     },
     {
