@@ -909,7 +909,9 @@ strong {
 }
 
 .site-header-search .search-toggle {
-    width: 44px;
+    color: #FFF;
+    font-weight: 500;
+    width: max-content;
     height: 44px;
     display: -webkit-box;
     display: -webkit-flex;
@@ -928,8 +930,9 @@ strong {
 
 @media screen and (max-width: 767px) {
     .site-header-search .search-toggle {
-        width:13.75vw;
-        height: 13.75vw
+        width:max-content;
+        height: 13.75vw;
+        font-size: 3vw;
     }
 }
 
