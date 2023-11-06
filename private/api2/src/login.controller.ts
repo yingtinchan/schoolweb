@@ -10,7 +10,7 @@ export class LoginController {
   @Post('/login')
   login(@Body() body: any, @Req() req){
     console.log('body='+JSON.stringify(body));
-    return this.loginService.login(body.student_id, body.password);
+    return this.loginService.login(body.id, body.password);
   }
   @Post('/logout')
   logout(@Body() body: any, @Req() req){
