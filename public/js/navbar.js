@@ -1,7 +1,7 @@
 let data = [
     {
         "title":"Introduction",
-        "img":"/public/img/index/thumb-schoolguide.jpeg",
+        "img":"./img/index/thumb-schoolguide.jpeg",
         "contect": [
             ["HKIT Message","hkitmegpage.html"],
             ["Institute History","history.html"],
@@ -14,7 +14,7 @@ let data = [
     },
     {
         "title":"Admission",
-        "img":"/public/img/index/thumb-educationtrait.jpeg",
+        "img":"./img/index/thumb-educationtrait.jpeg",
         "contect": [
             ["Prospective Student","prospective.html"],
             ["Financial Assistance","financial.html"],
@@ -23,7 +23,7 @@ let data = [
     },
     {
         "title":"Programms",
-        "img":"/public/img/index/thumb-schoollife.jpeg",
+        "img":"./img/index/thumb-schoollife.jpeg",
         "contect": [
             ["Bachelor  Degree","degree.html"],
             ["Top-Up Degree","degree.html"],
@@ -38,7 +38,7 @@ let data = [
     },
     {
         "title":"News & Events",
-        "img":"/public/img/index/thumb-entranceguide.jpeg",
+        "img":"./img/index/thumb-entranceguide.jpeg",
         "contect": [
             ["News","news.html"],
             ["Events","events.html"]
@@ -46,7 +46,7 @@ let data = [
     },
     {
         "title":"About",
-        "img":"/public/img/index/thumb-guidance.jpeg",
+        "img":"./img/index/thumb-guidance.jpeg",
         "contect": [
             ["Contact Us","contact.html"],
             ["Map","map.html"]

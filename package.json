@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@nestjs/swagger": "^7.1.14",
+    "swagger-ui-express": "^5.0.0",
+    "yarn": "^1.22.19"
+  }
+}
