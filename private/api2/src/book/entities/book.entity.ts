@@ -20,10 +20,10 @@ export class Book {
   @Column({ default: true })
   available: boolean;
   
-  @Column()
+  @Column({ default: '' })
   borrower_student_id: string;
 
-  @Column()
+  @Column({ default: '' })
   borrower_teacher_id: string;
 
   @CreateDateColumn()

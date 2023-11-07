@@ -60,8 +60,8 @@
                         <div class="search-cont toggle-cont2" style="z-index: 100;">
                             <div class="dummy"></div>
                             <div class="search-cont-wrap">
-                                <form method="get" action="search.html">
-                                    <input class="search-input" type="text" placeholder="search book" name="q" value="">
+                                <form method="get" action="library.html">
+                                    <input class="search-input" type="text" id="search" placeholder="search book" name="name" value="">
                                     <button class="search-submit fade" type="submit">search</button>
                                 </form>
                             </div>
@@ -93,38 +93,23 @@
                         <h2 class="tt ft36">Library</h2>
                     </header>
                     <div class="searchbox">
-                        <button class="typebutton active">book name</button><button class="typebutton">book
-                            author</button>
-                        <form method="get" action="search.html" class="libsearch">
-                            <input class="search-input" type="text" placeholder="search book name" name="q" value="">
+                        <button class="typebutton active">book name</button><button class="typebutton">book author</button>
+                        <form method="get" action="library.html" class="libsearch">
+                            <input class="search-input" type="text" id="search" placeholder="search book name" name="name" value="">
                             <button class="search-submit fade" type="submit">search</button>
                         </form>
-                        <form method="get" action="search.html" class="libsearch hide">
-                            <input class="search-input" type="text" placeholder="search book author" name="q" value="">
+                        <form method="get" action="library.html" class="libsearch hide">
+                            <input class="search-input" type="text" placeholder="search book author" name="author" value="">
                             <button class="search-submit fade" type="submit">search</button>
                         </form>
                     </div>
-                    <table class="resultbox">
-                        <tr>
+                    <table class="resultbox" id="getdata">
+                       <tr>
                             <th>Book ID</th>
                             <th>Book Name</th>
                             <th>Category</th>
                             <th>Book Status</th>
                             <th>Borrow Now</th>
-                        </tr>
-                        <tr>
-                            <th>1</th>
-                            <th>book name book name book name book name book name book name book name book name book name book name book name </th>
-                            <th>technology</th>
-                            <th><div class="book-status on">available</div></th>
-                            <th><button class="bookresult-btn">Borrow</button></th>
-                        </tr>
-                        <tr>
-                            <th>2</th>
-                            <th>book nameame</th>
-                            <th>technology</th>
-                            <th><div class="book-status">unavailable</div></th>
-                            <th><span class="bookresult-btn off">Borrow</span></th>
                         </tr>
                     </table>
                 </div>

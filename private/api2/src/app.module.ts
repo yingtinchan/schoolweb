@@ -11,9 +11,8 @@ import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import { LoginModule } from './login.module';
 import { AdminModule } from './admin.modul';
-import { ServeStaticModule } from '@nestjs/serve-static';
-import { join } from 'path';
 import { Book } from './book/entities/book.entity';
+import { BookModule } from './book/book.module';
 
 @Module({
   imports: [
@@ -22,18 +21,17 @@ import { Book } from './book/entities/book.entity';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: 'mrKay',
+      // password: 'mrKay',
+      password: 'oliver',
       database: 'school',
       entities: [User, Book],
       synchronize: true,
       autoLoadEntities: true,
     }),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '../../..', 'public'),
-    }),
     UsersModule,
     LoginModule,
     AdminModule,
+    BookModule
   ],
   //controllers: [UsersController],
   //providers: [UsersService],
