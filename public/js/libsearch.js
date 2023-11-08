@@ -39,17 +39,25 @@ async function getdata() {
                 <th>${books[i].name}</th>
                 <th>${books[i].category}</th>
                 <th><div class="${status}">available</div></th>
-                <th><button class="${btn}">Borrow</button></th>
+                <th><button class="${btn}" onclick="checktoken()">Borrow</button></th>
                 </tr>`
     }
     document.getElementById('getdata').innerHTML = table
 }
 getdata()
 
-// const searchInput = document.querySelector("#search")
+async function checktoken(){
+    const localtoken = localStorage.getItem("token");
+    if (localtoken != null) {
+        const res = await fetch(``, {
+          headers: {
+            Authorization: `${localtoken}`,
+          },
+        });
+    }else{
+        window.location.href = "login.html";
+    }
+    const userRecord = await res.json();
+    userRecord.data.id
+}
 
-
-// searchInput.addEventListener("change", function () {
-//     queryString = searchInput.value
-//     getdata()
-// })
