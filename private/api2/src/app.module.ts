@@ -1,18 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { LoginService } from './login.service';
-import { AdminService } from './admin.service';
 import { User } from './entitly/user.entity';
-import { DataSource } from 'typeorm';
-import { UsersModule } from './users.module';
-import { UsersController } from './users.controller';
-import { UsersService } from './users.service';
-import { LoginModule } from './login.module';
-import { AdminModule } from './admin.modul';
 import { Book } from './book/entities/book.entity';
 import { BookModule } from './book/book.module';
+import { LoginModule } from './login/login.module';
+import { AdminModule } from './admin/admin.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -21,21 +14,20 @@ import { BookModule } from './book/book.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      // password: 'mrKay',
-      password: 'oliver',
+      password: 'mrKay',
+      //password: 'oliver',
       database: 'school',
       entities: [User, Book],
       synchronize: true,
       autoLoadEntities: true,
     }),
-    UsersModule,
+    UserModule,
     LoginModule,
     AdminModule,
-    BookModule
+    BookModule,
+    UserModule
   ],
   //controllers: [UsersController],
   //providers: [UsersService],
 })
-export class AppModule {
-  constructor(private dataSource: DataSource) {}
-}
+export class AppModule {}

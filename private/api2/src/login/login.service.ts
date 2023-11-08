@@ -1,17 +1,19 @@
 import { Inject, Injectable, UnauthorizedException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository} from 'typeorm';
-import { User } from './entitly/user.entity';
+import { User } from '../entitly/user.entity';
 import { JwtService } from '@nestjs/jwt';
-import { checkUserTypeByID } from './function/function';
+import { checkUserTypeByID } from '../function/function';
+import { CreateLoginDto } from './dto/create-login.dto';
+import { UpdateLoginDto } from './dto/update-login.dto';
 
 @Injectable()
 export class LoginService {
-    constructor(
-        @InjectRepository(User)
-        private usersRepository: Repository<User>,
-        private jwtService: JwtService
-    ) {}
+  constructor(
+    @InjectRepository(User)
+    private usersRepository: Repository<User>,
+    private jwtService: JwtService
+  ) {}
 
     async login(_id,_password){
       console.log("_id="+_id+" | _password="+_password);
@@ -66,6 +68,10 @@ export class LoginService {
       };
     }
 
+    create(createLoginDto: CreateLoginDto) {
+      return 'This action adds a new login';
+    }
+
     async logout(_token, _type){
       console.log("_token="+_token);
       
@@ -82,4 +88,20 @@ export class LoginService {
         "message": "success"
       };
     }
+
+  findAll() {
+    return `This action returns all login`;
+  }
+
+  findOne(id: number) {
+    return `This action returns a #${id} login`;
+  }
+
+  update(id: number, updateLoginDto: UpdateLoginDto) {
+    return `This action updates a #${id} login`;
+  }
+
+  remove(id: number) {
+    return `This action removes a #${id} login`;
+  }
 }
