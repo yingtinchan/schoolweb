@@ -16,7 +16,7 @@ async function getdata() {
     }else{
         addurl = "author"
     }
-    console.log(addurl+queryString)
+    
     const res =
     queryString != null
             ? await fetch('/book/' + addurl+queryString)

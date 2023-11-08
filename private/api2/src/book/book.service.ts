@@ -40,10 +40,13 @@ export class BookService {
   }
 
   update(id: number, updateBookDto: UpdateBookDto) {
-    return `This action updates a #${id} book`;
+    return this.bookRepository.update(id, {    
+      available: false,
+      borrower_student_id: updateBookDto.borrower_student_id as string,
+      borrower_teacher_id: updateBookDto.borrower_teacher_id as string});
   }
 
   remove(id: number) {
-    return `This action removes a #${id} book`;
+    return this.bookRepository.delete(id);
   }
 }
