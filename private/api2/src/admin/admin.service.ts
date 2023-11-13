@@ -11,6 +11,28 @@ export class AdminService {
     @InjectRepository(User) private usersRepository: Repository<User>
   ) {}
 
+  async delMajor(_major_id){
+    var _table="major";
+
+    var data = await this.usersRepository.query("delete from "+_table+" where major_id='"+_major_id+"' ");
+
+    return {
+      "statusCode": 200,
+      "message": "success"
+    };
+  }
+
+  async addMajor(_name, _major_id){
+    var _table="major";
+
+    var data = await this.usersRepository.query("insert into "+_table+"  select '"+_major_id+"', '"+_name+"', curdate(), curdate() ");
+
+    return {
+      "statusCode": 200,
+      "message": "success"
+    };
+  }
+
   async addUser(_type, _id, _name, _password, _email, _major_id){
     //type=S,T,A? 
     var _table="";
