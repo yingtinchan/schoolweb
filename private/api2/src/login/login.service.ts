@@ -20,7 +20,7 @@ export class LoginService {
       var _ext = "";
       var _table = "";
       var _major_id = "";
-
+      
       if(_id.substring(0,1)=="A"){
         _table="admin";
       }else if(_id.substring(0,1)=="S"){
@@ -45,14 +45,24 @@ export class LoginService {
       console.log('select * from '+_table+' where 1=1' + _ext);
       console.log("return="+JSON.stringify(data[0].name));
       
-      const payload = {
+      var payload = {
         id: _id, 
         sub: _id,
         name: data[0].name,
         email: data[0].email,
         major_id: data[0].major_id,
         userType: _table
-      };
+      };   
+      // _table = "user"
+      // var data = await this.usersRepository.findOneBy({student_id:_id})
+      // var payload = {
+      //   id: _id, 
+      //   sub: _id,
+      //   name: data.name,
+      //   email: data.email,
+      //   major_id: data.major_id,
+      //   userType: _table
+      // };
 
       const token = await this.jwtService.sign(payload);
       console.log("token="+token);
@@ -64,7 +74,7 @@ export class LoginService {
         "statusCode": 200,
         "message": "success",
         access_token:token,
-        data:data[0]
+        data: data[0]
       };
     }
 

@@ -19,7 +19,7 @@ function login() {
             // }
             // formBody = formBody.join("&");
 
-            let res = await fetch('/login', {
+            let res = await fetch('/login/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -29,10 +29,10 @@ function login() {
                 // body: formBody
             })
             let json = await res.json()
-            document.querySelector('#loginform').reset()
+            document.querySelector('.form-login').reset()
             console.log(json)
             if (json.statusCode === 200) {
-                window.location.replace('gameLobby.html')
+                window.location.replace('admin_dashboard.html')
             } else {
                 document.querySelector('.notice').innerHTML = 'json.result'
             }

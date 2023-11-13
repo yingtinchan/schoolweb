@@ -9,6 +9,34 @@ import { UpdateAdminDto } from './dto/update-admin.dto';
 export class AdminController {
   constructor(private readonly adminService: AdminService) {}
 
+  @Post('/delMajor')
+  delMajor(@Body() body: any, @Req() req){
+    jwt.verify(req.headers.authorization, config.SECRET_KEY, function(err, decoded) {
+      console.log(decoded.userType);
+      if(decoded.userType!="admin"){
+        throw new UnauthorizedException();
+      }
+    });
+
+    console.log("req="+req.headers.authorization);
+    console.log('body='+JSON.stringify(body));
+    return this.adminService.delMajor(body.major_id);
+  }
+
+  @Post('/addMajor')
+  addMajor(@Body() body: any, @Req() req){
+    jwt.verify(req.headers.authorization, config.SECRET_KEY, function(err, decoded) {
+      console.log(decoded.userType);
+      if(decoded.userType!="admin"){
+        throw new UnauthorizedException();
+      }
+    });
+
+    console.log("req="+req.headers.authorization);
+    console.log('body='+JSON.stringify(body));
+    return this.adminService.addMajor(body.name,body.major_id);
+  }
+
   @Post('/addUser')
   addUser(@Body() body: any, @Req() req){
 
