@@ -15,13 +15,54 @@ export class UserService {
         private userRepository: Repository<User>,
     ) {}
 
-    async getStudents(_name){
-        console.log("_name="+_name);
-        var _ext = "";
-        if(_name!="undefined"){
-            _ext += " and name='"+_name+"'";
-        }
+    async getAdmins(_id){
+      console.log("id="+_id);
+      var _ext = "";
+      if(_id!="undefined"){
+          _ext += " and admin_id='"+_id+"'";
+      }
 
+      const data = await this.userRepository
+          .query('select admin_id, name, email, created_at, updated_at from admin where 1=1 and token is not NULL' + _ext);
+      console.log(JSON.stringify(data[0]));
+      if(JSON.stringify(data[0])==undefined || JSON.stringify(data[0])==""){
+          throw new UnauthorizedException();
+      }
+
+      return {
+          "statusCode": 200,
+          "message": "success",
+          data:data[0]
+      };
+    }
+
+    async getTeachers(_id){
+      console.log("id="+_id);
+      var _ext = "";
+      if(_id!="undefined"){
+          _ext += " and teacher_id='"+_id+"'";
+      }
+
+      const data = await this.userRepository
+          .query('select teacher_id, name, email, created_at, updated_at from teacher where 1=1 and token is not NULL' + _ext);
+      console.log(JSON.stringify(data[0]));
+      if(JSON.stringify(data[0])==undefined || JSON.stringify(data[0])==""){
+          throw new UnauthorizedException();
+      }
+
+      return {
+          "statusCode": 200,
+          "message": "success",
+          data:data[0]
+      };
+    }
+
+    async getStudents(_id){
+        console.log("student_id="+_id);
+        var _ext = "";
+        if(_id!="undefined"){
+            _ext += " and student_id='"+_id+"'";
+        }
         const data = await this.userRepository
             .query('select student_id, name, email, major_id, created_at, updated_at from student where 1=1 and token is not NULL' + _ext);
         console.log(JSON.stringify(data[0]));

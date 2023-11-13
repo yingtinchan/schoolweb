@@ -9,17 +9,43 @@ import config from '../config/config.json';
 export class UserController {
   constructor(private readonly userService: UserService) {}
 
-  @Post('/getStudents')
-  getStudents(@Body() body: any, @Req() req){
-    var name="";
+  @Post('/getAdmins')
+  getAdmins(@Body() body: any, @Req() req){
+    var id="";
     jwt.verify(req.headers.authorization, config.SECRET_KEY, function(err, decoded) {
-      console.log(decoded.name);
-      name=decoded.name;
+      console.log(decoded.id);
+      id=decoded.id;
     });
 
     console.log("req="+req.headers.authorization);
     console.log('body='+JSON.stringify(body));
-    return this.userService.getStudents(name);
+    return this.userService.getAdmins(id);
+  }
+
+  @Post('/getTeachers')
+  getTeachers(@Body() body: any, @Req() req){
+    var id="";
+    jwt.verify(req.headers.authorization, config.SECRET_KEY, function(err, decoded) {
+      console.log(decoded.id);
+      id=decoded.id;
+    });
+
+    console.log("req="+req.headers.authorization);
+    console.log('body='+JSON.stringify(body));
+    return this.userService.getTeachers(id);
+  }
+
+  @Post('/getStudents')
+  getStudents(@Body() body: any, @Req() req){
+    var id="";
+    jwt.verify(req.headers.authorization, config.SECRET_KEY, function(err, decoded) {
+      console.log(decoded.id);
+      id=decoded.id;
+    });
+
+    console.log("req="+req.headers.authorization);
+    console.log('body='+JSON.stringify(body));
+    return this.userService.getStudents(id);
   }
 
   @Post()
