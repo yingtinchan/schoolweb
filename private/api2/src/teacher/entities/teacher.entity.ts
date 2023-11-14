@@ -7,12 +7,12 @@ import {
   } from 'typeorm';
 
 @Entity()
-export class Admin {
+export class Teacher {
     @PrimaryGeneratedColumn()
     id:number;
 
     @Column()
-    admin_id: string;
+    teacher_id: string;
   
     @Column()
     name: string;

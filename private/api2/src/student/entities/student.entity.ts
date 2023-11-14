@@ -5,14 +5,14 @@ import {
     UpdateDateColumn,
     CreateDateColumn,
   } from 'typeorm';
-
+  
 @Entity()
-export class Admin {
+export class Student {
     @PrimaryGeneratedColumn()
     id:number;
 
     @Column()
-    admin_id: string;
+    student_id: string;
   
     @Column()
     name: string;
@@ -22,6 +22,9 @@ export class Admin {
   
     @Column()
     email: string;
+  
+    @Column()
+    major_id: string;
   
     @CreateDateColumn()
     created_at: Date;
