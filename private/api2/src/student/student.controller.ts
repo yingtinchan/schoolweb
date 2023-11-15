@@ -8,7 +8,13 @@ export class StudentController {
   constructor(private readonly studentService: StudentService) {}
 
   @Post()
-  create(@Body() createStudentDto: CreateStudentDto) {
+  async create(@Body() createStudentDto: CreateStudentDto) {
+    let findlastid = await this.studentService.findAll()
+    let genid = "S"+(findlastid.length+1).toString();
+    while(genid.length<8){
+      genid = genid.substring(0, 1) + '0' + genid.substring(1)
+    }
+    createStudentDto.student_id = genid
     return this.studentService.create(createStudentDto);
   }
 
@@ -19,7 +25,7 @@ export class StudentController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.studentService.findOne(+id);
+    return this.studentService.findOne(id);
   }
 
   @Patch(':id')

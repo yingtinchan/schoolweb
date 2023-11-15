@@ -12,13 +12,7 @@ export class TeacherService {
     private readonly teacherRepository: Repository<Teacher>,
   ){}
 
-  async create(createTeacherDto: CreateTeacherDto) {
-    let findlastid = await this.teacherRepository.find()
-    let genid = "T"+(findlastid.length+1).toString();
-    while(genid.length<9){
-      genid = genid.substring(0, 1) + '0' + genid.substring(1)
-    }
-    createTeacherDto.teacher_id = genid
+  create(createTeacherDto: CreateTeacherDto) {
     const data = this.teacherRepository.create(createTeacherDto);
     return this.teacherRepository.save(data);
   }
@@ -27,8 +21,9 @@ export class TeacherService {
     return this.teacherRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} teacher`;
+  findOne(id: string) {
+    return this.teacherRepository.createQueryBuilder("teacher")
+    .where("teacher.teacher_id = :id", {id:id}).getOne();
   }
 
   update(id: number, updateTeacherDto: UpdateTeacherDto) {

@@ -12,13 +12,7 @@ export class StudentService {
     private readonly studentRepository: Repository<Student>,
   ){}
 
-  async create(createStudentDto: CreateStudentDto) {
-    let findlastid = await this.studentRepository.find()
-    let genid = "S"+(findlastid.length+1).toString();
-    while(genid.length<9){
-      genid = genid.substring(0, 1) + '0' + genid.substring(1)
-    }
-    createStudentDto.student_id = genid
+  create(createStudentDto: CreateStudentDto) {
     const data = this.studentRepository.create(createStudentDto);
     return this.studentRepository.save(data);
   }
@@ -27,8 +21,9 @@ export class StudentService {
     return this.studentRepository.find()
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} student`;
+  findOne(id: string) {
+    return this.studentRepository.createQueryBuilder("student")
+    .where("student.student_id = :id", {id:id}).getOne();
   }
 
   update(id: number, updateStudentDto: UpdateStudentDto) {

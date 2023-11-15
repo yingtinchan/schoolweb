@@ -11,7 +11,7 @@ export class Student {
     @PrimaryGeneratedColumn()
     id:number;
 
-    @Column()
+    @Column({ unique: true })
     student_id: string;
   
     @Column()
